@@ -78,6 +78,11 @@ h1, h2, h3 {
     color: var(--text-white);
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
 .logo span {
     color: var(--accent);
 }
