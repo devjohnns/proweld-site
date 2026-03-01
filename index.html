@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding for proper text display -->
     <meta charset="UTF-8">
+    <!-- Makes site responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title shown in browser tab -->
     <title>Pro Weld | Professional Welding & Metal Fabrication</title>
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import Montserrat and Open Sans fonts from Google -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation Bar - Sticky at top -->
     <nav class="navbar">
         <div class="container">
+            <!-- Company logo -->
             <div class="logo"><img src="images/logo.png" alt="ProWeld Logo"></div>
+            <!-- Phone call button -->
             <a href="tel:0718673929" class="nav-phone">📞 Call Now</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - First thing visitors see -->
     <section class="hero">
         <div class="container">
+            <!-- Main headline and call-to-action -->
             <div class="hero-content">
                 <h1>Professional Welding & Metal Fabrication</h1>
                 <p>Gates, grills, doors, repairs & custom metal works</p>
+                <!-- Button scrolls to contact form -->
                 <a href="#contact" class="btn-primary">Get a Quote</a>
             </div>
+            <!-- Hero image -->
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=600&fit=crop" alt="Welding sparks">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - Company introduction -->
     <section class="about" id="about">
         <div class="container">
+            <!-- About text -->
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>We provide strong, reliable, and affordable welding services for homes and businesses. Quality work, delivered on time.</p>
             </div>
+            <!-- Owner's photo -->
             <div class="about-image">
                 <img src="images/owner-photo.jpg" alt="Owner of ProWeld">
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section - List of all services offered -->
     <section class="services" id="services">
         <div class="container">
             <h2>Our Services</h2>
+            <!-- Grid of service cards -->
             <div class="services-grid">
                 <div class="service-card">
                     <div class="icon">🔥</div>
@@ -125,10 +139,11 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section - Showcase of completed work -->
     <section class="gallery" id="gallery">
         <div class="container">
             <h2>Our Work</h2>
+            <!-- Grid of work photos -->
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/gallery-1.jpg" alt="Metal gate">
@@ -137,12 +152,14 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - Ways to reach the business -->
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
             <div class="contact-content">
+                <!-- Contact information cards -->
                 <div class="contact-info">
+                    <!-- Phone call link -->
                     <a href="tel:0718673929" class="contact-item">
                         <span class="icon">📞</span>
                         <div>
@@ -150,6 +167,7 @@
                             <p>0718 673 929</p>
                         </div>
                     </a>
+                    <!-- WhatsApp link -->
                     <a href="https://wa.me/254718673929" class="contact-item" target="_blank">
                         <span class="icon">💬</span>
                         <div>
@@ -157,6 +175,7 @@
                             <p>Quick response</p>
                         </div>
                     </a>
+                    <!-- Service area info -->
                     <div class="contact-item">
                         <span class="icon">📍</span>
                         <div>
@@ -165,6 +184,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Contact form - sends to WhatsApp -->
                 <form class="contact-form" id="contactForm">
                     <input type="text" id="name" placeholder="Your Name" required>
                     <input type="tel" id="phone" placeholder="Phone Number" required>
@@ -175,28 +195,37 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Bottom of page -->
     <footer>
         <div class="container">
             <div class="footer-content">
+                <!-- Logo -->
                 <div class="logo"><img src="images/logo.png" alt="ProWeld Logo"></div>
+                <!-- Contact info -->
                 <p>📞 0718 673 929</p>
+                <!-- Copyright -->
                 <p class="copyright">© 2026 All Rights Reserved</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript for WhatsApp form functionality -->
     <script>
+        // When form is submitted
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent normal form submission
             
+            // Get form values
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
+            // Create WhatsApp message with line breaks (%0A)
             const whatsappMessage = `Hello! My name is ${name}%0APhone: ${phone}%0A%0AProject Details:%0A${message}`;
+            // Create WhatsApp URL with pre-filled message
             const whatsappURL = `https://wa.me/254718673929?text=${whatsappMessage}`;
             
+            // Open WhatsApp in new tab
             window.open(whatsappURL, '_blank');
         });
     </script>
