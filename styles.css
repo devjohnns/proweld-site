@@ -79,7 +79,7 @@ h1, h2, h3 {
 }
 
 .logo img {
-    height: 70px;
+    height: 100px;
     width: auto;
 }
 
@@ -423,6 +423,10 @@ footer {
     .nav-phone {
         width: 100%;
         text-align: center;
+    }
+
+    .logo img {
+        height: 70px;
     }
 }
 
